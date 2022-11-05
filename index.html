@@ -1,12 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/3cdc7c2de6.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./sass/style.css">
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;1000&display=swap" rel="stylesheet">
+    <!-- JS -->
+    <script defer src="./js/coins.js"></script>
+    <script defer src="./js/modal.js"></script>
+    <script defer src="./js/app.js"></script>
+
     <title>Crypto Market</title>
 </head>
+
 <body>
-    
+    <header>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./multimedia/logo-bg.png" alt="" width="50" height="50"
+                        class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nuestra App</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inversiones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Empresas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ayuda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ingresar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- exchangeRate -->
+        <div class="container-exchangeRate" id="containerRate">
+        </div>
+    </header>
+    <!-- section one -->
+    <section>
+        <div class="container-aquisi my-5">
+            <div class="aquisi-text">
+                <h3>
+                    Comprá y vendé criptomonedas al mejor precio del mercado
+                </h3>
+                <p>Ingresar al mundo cripto es simple</p>
+                <div class="link-app">
+                    <a href="#">
+                        <img src="./multimedia/gplay.png" alt="" width="auto" height="75"
+                            class="d-inline-block align-text-top rounded mx-auto">
+                    </a>
+                    <a href="#">
+                        <img src="./multimedia/appstore.png" alt="" width="auto" height="75"
+                            class="d-inline-block align-text-top rounded mx-auto">
+                    </a>
+                </div>
+            </div>
+            <div class="aquisi-app">
+                <div class="aquisi-app-img">
+                    <img src="./multimedia/app-earn.png" alt="">
+                </div>
+                <h3>
+                    Podés generar rendimiento con tus criptomonedas todos los días. Mirá las tasas de interés
+                    disponibles.
+                </h3>
+                <a href="#" class="btn-padron" id="btn-apy">Descubra más</a>
+            </div>
+        </div>
+        <div class="modal-contenedor">
+            <div class="modal-apy">
+                <button id="containerCerrar"><i class="fas fa-times-circle"></i></button>
+                <h3>Tasas de interés anual</h3>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>

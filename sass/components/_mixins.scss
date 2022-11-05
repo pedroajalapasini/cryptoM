@@ -1,0 +1,10 @@
+/* mixins */
+
+@mixin display-padron { /* predefinido todo el centro */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+}
