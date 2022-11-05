@@ -73,6 +73,7 @@
                     Comprá y vendé criptomonedas al mejor precio del mercado
                 </h3>
                 <p>Ingresar al mundo cripto es simple</p>
+
                 <div class="link-app">
                     <a href="#">
                         <img src="./multimedia/gplay.png" alt="" width="auto" height="75"
@@ -89,18 +90,87 @@
                     <img src="./multimedia/app-earn.png" alt="">
                 </div>
                 <h3>
-                    Podés generar rendimiento con tus criptomonedas todos los días. Mirá las tasas de interés
-                    disponibles.
+                    Podés generar rendimiento con tus criptomonedas todos los días. 
                 </h3>
+                <p>Mirá las tasas de interés
+                    disponibles.</p>
                 <a href="#" class="btn-padron" id="btn-apy">Descubra más</a>
             </div>
         </div>
         <div class="modal-contenedor">
             <div class="modal-apy">
-                <button id="containerCerrar"><i class="fas fa-times-circle"></i></button>
+                <button class="position-absolute top-1 end-0 me-4" id="containerCerrar"><i
+                        class="fas fa-times-circle"></i></button>
                 <h3>Tasas de interés anual</h3>
             </div>
         </div>
+    </section>
+    <!-- section dos -->
+    <section>
+        <div class="container-content-ganancias my-5">
+            <div class="content-ganancias my-4">
+                <img src="./multimedia/wallet.png" alt="" class="img-fluid text-center">
+                <h3>Calcula tu rendimiento</h3>
+                <p>Dejá que tus activos crezcan.
+                    Activá las inversiones y empezá a disfrutar de tus ganancias.</p>
+            </div>
+            <div class="container-calculadora my-4">
+                <form>
+                    <h3>Calcula tus ganancias</h3>
+                    <div class="form-group">
+                        <select class="form-select" id="selectCoin">
+                            <option selected disabled>Seleciona una moneda</option>
+                            <option value="btc">Bitcoin</option>
+                            <option value="ether">Ethereum</option>
+                            <option value="usdt">USDT</option>
+                            <option value="usdc">USDC</option>
+                            <option value="dai">DAI</option>
+                            <option value="busb">BUSB</option>
+                            <option value="bnb">BNB</option>
+                            <option value="dot">DOT</option>
+                            <option value="sol">SOL</option>
+                            <option value="matic">Matic</option>
+                        </select>
+                    </div>
+                    <div class="form-check" id="formDateEarn">
+                        <span>Elegí el tiempo:</span>
+                        <div class="check-bt">
+                            <input class="check-input" type="checkbox" value="30" id="dateEarn1"><label
+                                class="form-check-label">30 dias</label>
+                            <input class="check-input" type="checkbox" value="60" id="dateEarn2"><label
+                                class="form-check-label">60 dias</label>
+                            <input class="check-input" type="checkbox" value="120" id="dateEarn3"><label
+                                class="form-check-label">120 dias</label>
+                        </div>
+                    </div>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text" style="color: white; background-color: #212121;">$</span>
+                        <input type="number" class="form-control" id="monto-earn"
+                            placeholder="Ingresá el monto que querés invertir" style="background-color: transparent;">
+                    </div>
+                    <div class="container-apy">
+                        <span>Porcentaje de APY:</span>
+                        <span class="text-apy" style="font-weight:bolder;" id="porcentajeAPY"></span>
+                    </div>
+                    <div class="container-btn-cal">
+                        <input type="submit" id="btn-calculador" value="Calcular rendimiento" class="btn-padron ">
+                    </div>
+                </form>
+                <div class="container-loader">
+                    <div class="loader">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="total-earn">
+                    <h3>El total en ganacias pasivas</h3>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" style="font-weight:bolder;">$</span>
+                        <input type="number" id="result-earn" class="form-control" disabled>
+                    </div>
+                </div>
+            </div>
     </section>
 </body>
 

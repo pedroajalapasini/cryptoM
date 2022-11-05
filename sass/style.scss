@@ -4,3 +4,13 @@
 @import 'partials/header';
 @import 'partials/home';
 @import 'partials/footer';
+
+body{
+    margin: 0;
+    /* */ background-color: $bg-home;
+    background-image: url(../multimedia/bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 1200px;
+    font-family: $font-global;
+    color:map-get($color-matriz, c3 )
+}

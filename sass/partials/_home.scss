@@ -1,5 +1,93 @@
 /* sections de home */
 
+/* section one */
+.container-aquisi {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .aquisi-text {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+
+        h3 {
+            color: map-get($color-matriz, c3);
+            font-size: map-get($fonts-size, f5);
+            margin-left: 10px;
+
+        }
+
+        p {
+            color: map-get($color-matriz, c3);
+            margin-left: 10px;
+        }
+
+        .link-app {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            flex-wrap: nowrap;
+            justify-content: center;
+
+            a {
+                padding: map-get($pads , p4);
+                text-align: $t-align;
+                text-decoration: none;
+
+                img {
+                    @media only screen and (max-width: 600px) {
+                        width: 150px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .aquisi-app {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        align-content: center;
+
+        .aquisi-app-img {
+            object-fit: cover;
+        }
+
+        h3 {}
+
+        a {
+            padding: map-get($pads , p4);
+            text-align: $t-align;
+            text-decoration: none;
+            background-color: map-get($color-matriz, c4);
+            border-radius: 8px;
+            letter-spacing: -1px;
+            font-size: map-get($fonts-size , f3);
+            font-weight: 500;
+            padding: 5px;
+
+            position: relative;
+            text-decoration: none;
+            color: #FFF;
+
+            &:hover {
+                background-image: linear-gradient(180deg, #edb119 0%, #c18d09 100%);
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+
 .modal-contenedor {
     position: fixed;
     top: 0;
@@ -21,7 +109,7 @@
 
 .modal-apy {
     position: relative;
-    background-color: white;
+    background-color: #212121;
     min-width: 500px;
     padding: 20px;
     margin-top: -100%;
@@ -33,25 +121,48 @@
 }
 
 .modal-apy h3 {
-    color: royalblue;
+    color: white;
+    border-bottom: $b-global;
     padding-bottom: 5px;
 }
-.modal-apy #btnCerrar {
+
+.modal-apy #containerCerrar {
     position: absolute;
     top: 15px;
     right: 15px;
     font-size: 20px;
-    color: royalblue;
+    color: map-get($color-matriz, c1);
+    ;
     border: none;
-    background-color: white;
+    background-color: transparent;
 }
+
 .modal-apy #btnCerrar:hover {
     cursor: pointer;
 }
+
 .modal-apy #btnCerrar:focus {
     outline: none;
 }
-.modal-apy #apy-contenedor {
+
+.modal-apy .apy-contenedor {
     padding-top: 10px;
-    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+    span {
+        margin: 2px;
+    }
+}
+
+/* section 2 */
+
+.container-content-ganancias {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
