@@ -203,6 +203,26 @@
   flex-wrap: wrap;
   flex-direction: row;
 }
+.container-content-ganancias .content-ganancias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.container-content-ganancias .content-ganancias h3 {
+  text-align: center;
+  padding-top: 5px;
+}
+.container-content-ganancias .content-ganancias img {
+  background-color: #212121;
+  border-radius: 600px;
+  width: 250px;
+}
+.container-content-ganancias .content-ganancias img:hover {
+  background-image: linear-gradient(180deg, rgba(237, 177, 25, 0.8980392157) 0%, rgba(193, 141, 9, 0.8352941176) 100%);
+  transform: scale(0.91);
+}
 
 body {
   margin: 0;
