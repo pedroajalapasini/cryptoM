@@ -105,6 +105,9 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.container-aquisi .aquisi-app h3 {
+  text-align: center;
+}
 .container-aquisi .aquisi-app a {
   padding: 5px;
   text-align: center;

@@ -62,7 +62,9 @@
             object-fit: cover;
         }
 
-        h3 {}
+        h3 {
+            text-align: center;
+        }
 
         a {
             padding: map-get($pads , p4);
