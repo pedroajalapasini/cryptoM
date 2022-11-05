@@ -7,4 +7,13 @@
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
-}
+};
+
+@mixin display ($display, $direction,$just, $align,$wrap, $items) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content:$just;
+    align-content: $align;
+    flex-wrap: $wrap;
+    align-items: $items
+};
