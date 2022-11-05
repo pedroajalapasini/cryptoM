@@ -2,18 +2,10 @@
 
 /* section one */
 .container-aquisi {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-evenly;
+    @include display (flex, row, space-evenly, center, nowrap, center);
 
     .aquisi-text {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        align-content: center;
+        @include display (flex, column, space-evenly, center, nowrap, center);
 
         h3 {
             color: map-get($color-matriz, c3);
@@ -28,12 +20,7 @@
         }
 
         .link-app {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            align-content: center;
-            flex-wrap: nowrap;
-            justify-content: center;
+            @include display (flex, row, center, center, nowrap, center);
 
             a {
                 padding: map-get($pads , p4);
@@ -52,11 +39,7 @@
 
     .aquisi-app {
         width: 50%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        align-content: center;
+        @include display (flex, column, center, nowrap, center);
 
         .aquisi-app-img {
             object-fit: cover;
@@ -96,9 +79,7 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include display (flex, center, center, center);
     transition: all .5s;
     opacity: 0;
     visibility: hidden;
@@ -149,10 +130,7 @@
 
 .modal-apy .apy-contenedor {
     padding-top: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
+    @include display (flex, row, center, wrap, center);
 
     span {
         margin: 2px;
@@ -162,29 +140,43 @@
 /* section 2 */
 
 .container-content-ganancias {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    .content-ganancias{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: nowrap;
-        justify-content: center;
-        h3{
+    @include display (flex, row, space-evenly, center, wrap, center);
+
+    .content-ganancias {
+        @include display (flex, column, center, center, nowrap, center);
+
+        h3 {
             text-align: center;
             padding-top: 5px;
         }
-        img{
+
+        img {
             background-color: #212121;
             border-radius: 600px;
             width: 250px;
-            &:hover{
-                background-image:linear-gradient(180deg, #edb119e5 0%, #c18d09d5 100%);
+
+            &:hover {
+                background-image: linear-gradient(180deg, #edb119e5 0%, #c18d09d5 100%);
                 transform: scale(0.91);
             }
+        }
+    }
+}
+
+.container-calculadora {
+    background-color: #212121;
+    padding: 10px;
+    border-radius: 20px;
+    @include display (flex, column, wrap);
+
+    form {
+        @include display (flex, column, nowrap, center);
+        border: 2px solid #FDC101;
+
+        .titleForm {
+            border: 2px solid #FDC101;
+            font-weight: bold;
+
         }
     }
 }

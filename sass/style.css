@@ -53,17 +53,19 @@
 /* section one */
 .container-aquisi {
   display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 .container-aquisi .aquisi-text {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
+  justify-content: space-evenly;
   align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 .container-aquisi .aquisi-text h3 {
   color: white;
@@ -77,10 +79,10 @@
 .container-aquisi .aquisi-text .link-app {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: center;
   align-content: center;
   flex-wrap: nowrap;
-  justify-content: center;
+  align-items: center;
 }
 .container-aquisi .aquisi-text .link-app a {
   padding: 5px;
@@ -222,6 +224,21 @@
 .container-content-ganancias .content-ganancias img:hover {
   background-image: linear-gradient(180deg, rgba(237, 177, 25, 0.8980392157) 0%, rgba(193, 141, 9, 0.8352941176) 100%);
   transform: scale(0.91);
+}
+
+.container-calculadora {
+  background-color: #212121;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.container-calculadora form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 body {
