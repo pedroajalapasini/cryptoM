@@ -267,4 +267,15 @@ form {
 
 .container-total{
     display: none;
+    padding-top: 10px;
+    .total-c{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+        .montoTotal{
+            text-align: center;
+            font-size: 15pt;
+        }
+    }
 }

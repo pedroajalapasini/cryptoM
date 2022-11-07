@@ -1,0 +1,102 @@
+/* footer */
+footer {
+    background-color: #212121;
+
+    .container-footer {
+        .container-brand-f {
+            li {
+                margin-top: 5px;
+                list-style: none;
+                font-style: italic;
+            }
+        }
+
+        .c-Eu {
+
+            li {
+                list-style: none;
+                display: flex;
+
+                a {
+                    text-decoration: none;
+                    padding: 3px;
+                    position: relative;
+                    overflow: hidden;
+                    background-color: transparent;
+                    text-align: center;
+                    transition: .3s;
+                    z-index: 1;
+                    color: white;
+                    border-radius: 60px;
+
+                    &::before {
+                        content: '';
+                        width: 0;
+                        height: 500%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%) rotate(45deg);
+                        background: #FDC101;
+                        transition: .5s ease;
+                        display: block;
+                        z-index: -1;
+                    }
+
+                    &:hover::before {
+                        width: 105%;
+                    }
+
+                    &:hover {
+                        color: #111;
+
+                    }
+                }
+            }
+        }
+    }
+
+    .c-Ct {
+        .container-contact {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+
+            .contact-mail {
+                span {
+                    margin-left: 2px;
+                }
+            }
+
+            .contact-phone {
+                margin-top: 25px;
+
+                span {
+                    margin-left: 2px;
+                }
+            }
+        }
+    }
+
+    .c-Rs {
+        .container-redes-o {
+            a {
+                @include cc-rss;
+
+            }
+
+        }
+
+        .container-redes-cc {
+            margin-top: 25px;
+
+            a {
+                @include cc-rss;
+            }
+        }
+    }
+
+    .derechos-a {
+        text-align: center;
+    }
+}

@@ -25,3 +25,9 @@
     flex-wrap: $wrap;
     align-items: $items
 }
+
+@mixin cc-rss {
+    margin: 2px;
+    text-decoration: none;
+    align-items: center;
+}
