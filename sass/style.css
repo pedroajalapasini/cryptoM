@@ -53,18 +53,18 @@
 /* section one */
 .container-aquisi {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   align-content: center;
+  flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
 }
 .container-aquisi .aquisi-text {
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
   align-content: center;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
 }
 .container-aquisi .aquisi-text h3 {
@@ -78,9 +78,9 @@
 }
 .container-aquisi .aquisi-text .link-app {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-content: center;
+  flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
 }
@@ -98,10 +98,11 @@
 .container-aquisi .aquisi-app {
   width: 50%;
   display: flex;
+  justify-content: center;
+  align-content: center;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  align-content: center;
 }
 .container-aquisi .aquisi-app .aquisi-app-img {
   -o-object-fit: cover;
@@ -136,12 +137,13 @@
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: all 0.5s;
   opacity: 0;
   visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .modal-active {
@@ -189,9 +191,11 @@
 .modal-apy .apy-contenedor {
   padding-top: 10px;
   display: flex;
+  justify-content: center;
+  align-content: center;
   flex-direction: row;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 .modal-apy .apy-contenedor span {
   margin: 2px;
@@ -201,16 +205,18 @@
 .container-content-ganancias {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
+  align-content: center;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .container-content-ganancias .content-ganancias {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: nowrap;
   justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 .container-content-ganancias .content-ganancias h3 {
   text-align: center;
@@ -231,14 +237,109 @@
   padding: 10px;
   border-radius: 20px;
   display: flex;
+  justify-content: center;
+  align-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-}
-.container-calculadora form {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  flex-wrap: nowrap;
+}
+.container-calculadora:hover {
+  background-image: linear-gradient(180deg, rgba(77, 76, 76, 0.8980392157) 0%, rgba(0, 0, 0, 0.8352941176) 100%);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+form .formCheck {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5px;
+}
+form .formCheck label {
+  padding: 5px;
+}
+form .formCheck span {
+  font-size: 12pt;
+}
+form .container-btn-cal .btn-padron {
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  background-image: linear-gradient(180deg, #edb119 0%, #c18d09 100%);
+  border-radius: 8px;
+  letter-spacing: -1px;
+  font-size: 14pt;
+  font-weight: 500;
+  padding: 5px;
+  position: relative;
+  text-decoration: none;
+  color: #FFF;
+}
+form .container-btn-cal .btn-padron:hover {
+  background-image: linear-gradient(180deg, #ceae2f 0%, #e4cd95 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: #212121;
+}
+
+/* loader */
+.loader {
+  display: none;
+  align-items: center;
+}
+
+.bar {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  -webkit-animation: scale-up4 1s linear infinite;
+          animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+  height: 35px;
+  margin: 0 5px;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+.bar:nth-child(3) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+@-webkit-keyframes scale-up4 {
+  20% {
+    background-color: white;
+    transform: scaleY(1.5);
+  }
+  40% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: white;
+    transform: scaleY(1.5);
+  }
+  40% {
+    transform: scaleY(1);
+  }
+}
+.container-total {
+  display: none;
 }
 
 body {

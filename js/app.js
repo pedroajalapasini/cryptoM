@@ -10,7 +10,7 @@ coinsRate.forEach((exchangeRate) => {
         <span>$${exchangeRate.precio}</span>
     `
     containerRate.append(div)
-})
+});
 
 
 coinsRate.forEach((apyContenedor) => {
@@ -24,4 +24,45 @@ coinsRate.forEach((apyContenedor) => {
     `
     modalApy.append(div)
 
-})
+});
+
+/* const de solicitud */
+
+let MontoIngresado = parseInt(document.getElementById('monto-ingresado').value);
+const resultadoFinal = document.querySelector('#result-earn')
+const TokenBTC = 6.368124;
+const TokenETH = 492.2131;
+/*const TokenUSDT = 297.95;
+const TokenUSDC = 297.95;
+const TokenBNB = 105.772; */
+
+function resultadoTotal(){
+    let total = 0;
+
+    if (document.getElementById('token1').checked) {
+        total = MontoIngresado / TokenBTC
+
+        resultadoFinal.innerText = total.toFixed(6)
+
+    }
+    else if (document.getElementById('token2').checked) {
+        total = MontoIngresado / TokenETH
+        resultadoFinal.innerText = total.toFixed(5)
+    }
+    else if (document.getElementById('token3').checked) {
+        total = MontoIngresado / 297.95
+        resultadoFinal.innerText = total.toFixed(2)
+    }
+    else if (document.getElementById('token4').checked) {
+        total = MontoIngresado / 297.95 
+        resultadoFinal.innerText = total.toFixed(2)
+    }
+    else if (document.getElementById('token5').checked) {
+        total = MontoIngresado / 105.772
+        resultadoFinal.innerText = total.toFixed(5)
+    }
+    else {
+        alert('Debés elegir una opción')
+    }
+}
+
