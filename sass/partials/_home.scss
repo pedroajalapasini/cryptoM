@@ -2,10 +2,12 @@
 
 /* section one */
 .container-aquisi {
-    @include display (flex, row, space-evenly, center, nowrap, center);
+    @include display1 (flex, space-evenly, center);
+    @include display2 (row, nowrap, center);
 
     .aquisi-text {
-        @include display (flex, column, space-evenly, center, nowrap, center);
+        @include display1 (flex, space-evenly, center);
+        @include display2 (column, wrap, center);
 
         h3 {
             color: map-get($color-matriz, c3);
@@ -20,7 +22,8 @@
         }
 
         .link-app {
-            @include display (flex, row, center, center, nowrap, center);
+            @include display1 (flex, center, center);
+            @include display2 (row, nowrap, center);
 
             a {
                 padding: map-get($pads , p4);
@@ -39,7 +42,8 @@
 
     .aquisi-app {
         width: 50%;
-        @include display (flex, column, center, nowrap, center);
+        @include display1 (flex, center, center);
+        @include display2 (column, nowrap, center);
 
         .aquisi-app-img {
             object-fit: cover;
@@ -79,10 +83,11 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.3);
-    @include display (flex, center, center, center);
     transition: all .5s;
     opacity: 0;
     visibility: hidden;
+    @include display1 (flex, center, center);
+    align-items: center;
 }
 
 .modal-active {
@@ -130,7 +135,8 @@
 
 .modal-apy .apy-contenedor {
     padding-top: 10px;
-    @include display (flex, row, center, wrap, center);
+    @include display1 (flex, center, center);
+    @include display2 (row, wrap, center);
 
     span {
         margin: 2px;
@@ -140,10 +146,12 @@
 /* section 2 */
 
 .container-content-ganancias {
-    @include display (flex, row, space-evenly, center, wrap, center);
+    @include display1 (flex, space-evenly, center);
+    @include display2 (row, wrap, center);
 
     .content-ganancias {
-        @include display (flex, column, center, center, nowrap, center);
+        @include display1 (flex, center, center);
+        @include display2 (column, nowrap, center);
 
         h3 {
             text-align: center;
@@ -167,16 +175,107 @@
     background-color: #212121;
     padding: 10px;
     border-radius: 20px;
-    @include display (flex, column, wrap);
+    @include display1 (flex, center, center);
+    @include display2 (column, wrap, center);
 
-    form {
-        @include display (flex, column, nowrap, center);
-        border: 2px solid #FDC101;
+    &:hover {
+        background-image: linear-gradient(180deg, #4d4c4ce5 0%, #000000d5 100%);
+    }
+}
 
-        .titleForm {
-            border: 2px solid #FDC101;
-            font-weight: bold;
+form {
+    @include display1 (flex, center, center);
+    @include display2 (column, wrap, center);
 
+    .formCheck {
+        @include display1 (flex, center, center);
+        @include display2 (row, wrap, center);
+        padding: 5px;
+        
+        label {
+            padding: 5px;
+        }
+
+        span {
+            font-size: map-get($fonts-size, f2);
+        }
+
+    }
+
+    .container-btn-cal {
+        .btn-padron {
+            padding: map-get($pads , p4);
+            text-align: $t-align;
+            text-decoration: none;
+            background-image: linear-gradient(180deg, #edb119 0%, #c18d09 100%);
+            border-radius: 8px;
+            letter-spacing: -1px;
+            font-size: map-get($fonts-size , f3);
+            font-weight: 500;
+            padding: 5px;
+
+            position: relative;
+            text-decoration: none;
+            color: #FFF;
+
+            &:hover {
+                background-image: linear-gradient(180deg, #ceae2f 0%, #e4cd95 100%);
+                transform: translateY(-3px);
+
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                color: map-get($color-matriz, c4);
+            }
+        }
+    }
+}
+/* loader */
+.loader {
+    display: none;
+    align-items: center;
+
+}
+
+.bar {
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+    height: 35px;
+    margin: 0 5px;
+    animation-delay: .25s;
+}
+
+.bar:nth-child(3) {
+    animation-delay: .5s;
+}
+
+@keyframes scale-up4 {
+    20% {
+        background-color: #ffff;
+        transform: scaleY(1.5);
+    }
+
+    40% {
+        transform: scaleY(1);
+    }
+}
+
+.container-total{
+    display: none;
+    padding-top: 10px;
+    .total-c{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+        .montoTotal{
+            text-align: center;
+            font-size: 15pt;
         }
     }
 }

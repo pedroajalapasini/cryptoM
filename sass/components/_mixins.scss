@@ -1,19 +1,33 @@
 /* mixins */
 
-@mixin display-padron { /* predefinido todo el centro */
+@mixin display-padron {
+    /* predefinido todo el centro */
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
-};
+}
 
-@mixin display ($display, $direction,$just, $align,$wrap, $items) {
+;
+
+@mixin display1 ($display, $just, $align) {
     display: $display;
-    flex-direction: $direction;
-    justify-content:$just;
+    justify-content: $just;
     align-content: $align;
+}
+
+;
+
+@mixin display2 ($direction, $wrap, $items) {
+    flex-direction: $direction;
     flex-wrap: $wrap;
     align-items: $items
-};
+}
+
+@mixin cc-rss {
+    margin: 2px;
+    text-decoration: none;
+    align-items: center;
+}

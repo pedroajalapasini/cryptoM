@@ -7,14 +7,10 @@
     overflow: hidden;
 
     .exchangeRate {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        flex-direction: row;
+        @include display1 (flex, center, center);
+        @include display2 (row, nowrap, center);
         margin: 2px 20px;
         animation: exchangeRate 20s linear 0s infinite both running;
-        overflow: hidden;
 
         @keyframes exchangeRate {
             0% {
