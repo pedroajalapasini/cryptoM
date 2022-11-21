@@ -19,17 +19,4 @@ modalApy.addEventListener('click', (event) => {
 })
 
 
-const calcular = document.querySelector('#btn-calculador')
-
-calcular.addEventListener('click', (e) => {
-    e.preventDefault();
-    MostrarTotal() ;
-    
-})
-
-function MostrarTotal() {
-    const containerResultado = document.querySelector('.container-total')
-    containerResultado.style.display = "block"
-    resultadoTotal();
-}
 
