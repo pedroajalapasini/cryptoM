@@ -14,7 +14,7 @@
             @include display2 (row, wrap, center);
         }
 
-        .formLogin {
+        .formUser {
             form {
                 margin-top: 10px;
                 @include display1 (flex, center, center);

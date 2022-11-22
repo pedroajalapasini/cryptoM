@@ -653,7 +653,7 @@ form .container-btn-cal .btnClear:hover {
   flex-wrap: wrap;
   align-items: center;
 }
-.containerLogin .container-login .formLogin form {
+.containerLogin .container-login .formUser form {
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -662,10 +662,10 @@ form .container-btn-cal .btnClear:hover {
   flex-wrap: wrap;
   align-items: center;
 }
-.containerLogin .container-login .formLogin form h3 {
+.containerLogin .container-login .formUser form h3 {
   border-bottom: 2px solid #FDC101;
 }
-.containerLogin .container-login .formLogin form .info-login {
+.containerLogin .container-login .formUser form .info-login {
   display: flex;
   justify-content: flex-start;
   align-content: center;
@@ -674,7 +674,7 @@ form .container-btn-cal .btnClear:hover {
   align-items: center;
   padding: 3px;
 }
-.containerLogin .container-login .formLogin form .btns-login {
+.containerLogin .container-login .formUser form .btns-login {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -682,7 +682,7 @@ form .container-btn-cal .btnClear:hover {
   flex-wrap: wrap;
   align-items: center;
 }
-.containerLogin .container-login .formLogin form .btns-login a {
+.containerLogin .container-login .formUser form .btns-login a {
   text-decoration: none;
   color: #FDC101;
   font-weight: 600;
@@ -690,7 +690,7 @@ form .container-btn-cal .btnClear:hover {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.containerLogin .container-login .formLogin form .btns-login button {
+.containerLogin .container-login .formUser form .btns-login button {
   text-decoration: none;
   padding: 3px;
   position: relative;
@@ -704,7 +704,7 @@ form .container-btn-cal .btnClear:hover {
   border: none;
   background-color: #000;
 }
-.containerLogin .container-login .formLogin form .btns-login button::before {
+.containerLogin .container-login .formUser form .btns-login button::before {
   content: "";
   width: 0;
   height: 500%;
@@ -717,26 +717,26 @@ form .container-btn-cal .btnClear:hover {
   display: block;
   z-index: -1;
 }
-.containerLogin .container-login .formLogin form .btns-login button:hover::before {
+.containerLogin .container-login .formUser form .btns-login button:hover::before {
   width: 105%;
 }
-.containerLogin .container-login .formLogin form .btns-login button:hover {
+.containerLogin .container-login .formUser form .btns-login button:hover {
   color: #111;
 }
-.containerLogin .container-login .formLogin .goRegister {
+.containerLogin .container-login .formUser .goRegister {
   border-top: #FDC101 2px solid;
   text-align: center;
   margin-top: 10px;
 }
-.containerLogin .container-login .formLogin .goRegister p {
+.containerLogin .container-login .formUser .goRegister p {
   margin-top: 10px;
 }
-.containerLogin .container-login .formLogin .goRegister p a {
+.containerLogin .container-login .formUser .goRegister p a {
   text-decoration: none;
   color: #FDC101;
   font-weight: 600;
 }
-.containerLogin .container-login .formLogin .goRegister p a:hover {
+.containerLogin .container-login .formUser .goRegister p a:hover {
   background-image: linear-gradient(180deg, rgba(77, 76, 76, 0.8980392157) 0%, rgba(0, 0, 0, 0.8352941176) 100%);
   /* background-image: linear-gradient(180deg, #edb119 0%, #c18d09 100%);
   transform: translateY(-3px);

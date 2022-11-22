@@ -67,20 +67,20 @@
                 <div class="container-br">
                     <img src="../multimedia/brand-f.png" alt="">
                 </div>
-                <div class="formLogin" id="formLog">
-                    <form>
+                <div class="formUser" id="formLog">
+                    <form id="my-form1">
                         <h3>Iniciar sesión</h3>
                         <div class="info-login"><span>Email:</span>
-                            <input type="email" class="form-control" placeholder="Ingresá tu correo" aria-label="email"
+                            <input type="email" id="email-login"class="form-control" placeholder="Ingresá tu correo" aria-label="email"
                                 aria-describedby="basic-addon2" required>
                             <span>Contraseña</span>
-                            <input type="password" class="form-control" placeholder="Ingresá tu contraseña"
+                            <input type="password" id="pass-login" class="form-control" placeholder="Ingresá tu contraseña"
                                 aria-label="password" autocomplete="current-password" aria-describedby="basic-addon2"
                                 required>
                         </div>
                         <div class="btns-login">
                             <a href="./password.html" class="">¿Olvidaste tu contraseña?</a>
-                            <button type="submit" aria-label="ingresar">Ingresar</button>
+                            <button type="submit" aria-label="ingresar" id="btn-log">Ingresar</button>
                         </div>
                         <div class="goRegister">
                             <p>¿Todavía no tenés una cuenta? <a href="#" id="showRegister">Registrate</a></p>
@@ -88,21 +88,21 @@
                         </div>
                     </form>
                 </div>
-                <div class="formLogin" id="formRegistre">
-                    <form>
+                <div class="formUser" id="formRegistre">
+                    <form id="my-form2">
                         <h3>Registrarse</h3>
                         <div class="info-login"><span>Email:</span>
-                            <input type="email" class="form-control" placeholder="Ingresá tu correo" aria-label="email"
+                            <input type="email" id="email-signup" class="form-control" placeholder="Ingresá tu correo" aria-label="email"
                                 aria-describedby="basic-addon2" required>
                             <span>Contraseña</span>
-                            <input type="password" class="form-control" placeholder="Crea tu contraseña"
+                            <input type="password" id="pass-signup" class="form-control" placeholder="Crea tu contraseña"
                                 aria-label="new-password" autocomplete="new-password" aria-describedby="basic-addon2"
                                 required>
                             <div class="btns-signup">
                                 <input type="checkbox" name="" id=""><span>He leído y acepto los
                                     <a href="#">Términos y Condiciones</a></span>
                             </div>
-                            <button type="submit" aria-label="crear-cuenta">Crea tu cuenta</button>
+                            <button type="submit" aria-label="crear-cuenta" id="btn-signup">Crea tu cuenta</button>
 
                         </div>
                         <div class="goRegister">
