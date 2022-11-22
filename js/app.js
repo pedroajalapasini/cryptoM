@@ -28,20 +28,19 @@ coinsRate.forEach((apyContenedor) => {
 
 /* const de solicitud */
 
-
 const resultadoFinal = document.querySelector('#result-earn')
 const TokenBTC = 6.067072;
-const TokenETH = 492.2131;
+const TokenETH = 492.21310;
 const TokenUSDT = 297.95;
 const TokenUSDC = 297.95;
-const TokenBNB = 105.772; 
+const TokenBNB = 105.772;
 
-function resultadoTotal(){
+function resultadoTotal() {
     let total = 0;
     let MontoIngresado = parseInt(document.getElementById('monto-ingresado').value);
 
     if (document.getElementById('token1').checked) {
-        total =  TokenBTC / MontoIngresado 
+        total = MontoIngresado / TokenBTC
 
         resultadoFinal.innerText = "$" + total.toFixed(6)
 
@@ -68,7 +67,31 @@ function resultadoTotal(){
     }
     else {
         resultadoFinal.innerText = 'Debés elegir una opción'
+        resultadoFinal.style.color = "rgb(240, 86, 86)"
     }
 }
+
+
+const calcular = document.querySelector('#btn-calculador')
+const clear = document.querySelector('#btn-clear')
+calcular.addEventListener('click', (e) => {
+    e.preventDefault();
+    MostrarTotal();
+
+})
+
+function MostrarTotal() {
+    const containerResultado = document.querySelector('.container-total')
+    containerResultado.style.display = "block"
+    resultadoTotal();
+}
+
+clear.addEventListener('click', () =>{
+    const containerResultado = document.querySelector('.container-total')
+    containerResultado.style.display = "none"
+})
+
+
+// login // 
 
 

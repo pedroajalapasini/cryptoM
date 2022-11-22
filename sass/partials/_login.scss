@@ -1,0 +1,135 @@
+/* LOGIN */
+.containerLogin {
+    @include display1 (flex, space-evenly, center);
+    @include display2 (row, nowrap, "");
+
+    .container-login {
+        margin: 5px auto;
+        box-shadow: 15px 0px 14px 0px rgb(26, 25, 25);
+        z-index: 1;
+        background-color: #212121;
+
+        .container-br {
+            @include display1 (flex, center, center);
+            @include display2 (row, wrap, center);
+        }
+
+        .formUser {
+            form {
+                margin-top: 10px;
+                @include display1 (flex, center, center);
+                @include display2 (column, wrap, center);
+
+                h3 {
+                    border-bottom: 2px solid #FDC101;
+                }
+
+                .info-login {
+                    @include display1 (flex, flex-start, center);
+                    @include display2 (row, wrap, center);
+                    padding: 3px;
+                }
+
+                .btns-login {
+                    @include display1 (flex, center, center);
+                    @include display2 (column, wrap, center);
+
+                    a {
+                        text-decoration: none;
+                        color: #FDC101;
+                        font-weight: 600;
+                        margin-left: 100px;
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
+
+                    button {
+                        @include btn-a-padron;
+                        border: none;
+                        background-color: #000;
+                    }
+                }
+            }
+
+            .goRegister {
+                border-top: #FDC101 2px solid;
+                text-align: center;
+                margin-top: 10px;
+
+                p {
+                    margin-top: 10px;
+
+                    a {
+                        text-decoration: none;
+                        color: #FDC101;
+                        font-weight: 600;
+
+                        &:hover {
+                            @include hover-btns;
+                        }
+                    }
+                }
+            }
+        }
+        #formRegistre{
+            display: none;
+        }
+        .btns-signup {
+            margin: 10px 3px;
+            @include display1 (flex, space-around, center);
+            @include display2 (row, nowrap, center);
+            span{
+                margin: 5px;
+            }
+            a{
+                text-decoration: none;
+                color: #FDC101;
+                font-weight: 600;
+            }
+        }
+
+        button {
+            @include btn-a-padron;
+            border: none;
+            background-color: #000;
+            margin: 2px auto;
+        }
+    }
+
+
+    .container-decor {
+        height: auto;
+        background-image: url(/multimedia/bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .decor-img {
+            @include display1 (flex, center, center);
+            @include display2 (row, nowrap, center);
+
+
+
+            .btc-login {
+                width: 400px;
+                max-width: 70%;
+                z-index: 1;
+                margin-right: -70px;
+                animation-iteration-count: infinite;
+                animation-duration: 4s;
+                animation-name: float;
+                animation-timing-function: ease;
+                animation-delay: 2s;
+            }
+
+            .eth-login {
+                width: 325px;
+                max-width: 50%;
+                animation-iteration-count: infinite;
+                animation-duration: 4s;
+                animation-name: float;
+                animation-timing-function: ease;
+                animation-delay: 8s;
+            }
+        }
+    }
+}

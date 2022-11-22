@@ -1,35 +1,40 @@
 /* header */
 
 .container-exchangeRate {
-    @include display-padron;
-    background-color: black;
-    color: white;
-    overflow: hidden;
+   @include display-padron;
+   background-color: black;
+   color: white;
+   overflow: hidden;
+   position: absolute;
 
-    .exchangeRate {
-        @include display1 (flex, center, center);
-        @include display2 (row, nowrap, center);
-        margin: 2px 20px;
-        animation: exchangeRate 20s linear 0s infinite both running;
 
-        @keyframes exchangeRate {
-            0% {
-                transform: translateX(2000px);
-                transition: 0s;
-            }
+   .exchangeRate {
+      @include display1 (flex, center, center);
+      @include display2 (row, nowrap, center);
+      margin: 2px 20px;
+      position: relative;
 
-            100% {
-                transform: translateX(-200px);
-                transition: 3s;
-            }
-        }
+      overflow: hidden;
 
-        strong {
-            margin-left: 2px;
-        }
+      animation: marquee 15s linear infinite;
 
-        span {
-            margin-left: 5px;
-        }
-    }
+      @keyframes marquee {
+         0% {
+            left: 100%;
+            transition: 20s;
+         }
+
+         100% {
+            left: -40%;
+            transition: 20s;
+         }
+      }
+      strong {
+         margin-left: 2px;
+      }
+
+      span {
+         margin-left: 5px;
+      }
+   }
 }

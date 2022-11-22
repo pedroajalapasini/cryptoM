@@ -2,280 +2,489 @@
 
 /* section one */
 .container-aquisi {
-    @include display1 (flex, space-evenly, center);
-    @include display2 (row, nowrap, center);
+	@include display1 (flex, space-evenly, center);
+	@include display2 (row, nowrap, center);
+	background-image: url(../multimedia/bg.png);
+	background-repeat: no-repeat;
+	background-size: 100% 1200px;
 
-    .aquisi-text {
-        @include display1 (flex, space-evenly, center);
-        @include display2 (column, wrap, center);
+	.aquisi-text {
+		@include display1 (flex, space-evenly, center);
+		@include display2 (column, wrap, center);
 
-        h3 {
-            color: map-get($color-matriz, c3);
-            font-size: map-get($fonts-size, f5);
-            margin-left: 10px;
+		h3 {
+			color: map-get($color-matriz, c3);
+			font-size: map-get($fonts-size, f5);
+			margin-left: 10px;
 
-        }
+		}
 
-        p {
-            color: map-get($color-matriz, c3);
-            margin-left: 10px;
-        }
+		p {
+			color: map-get($color-matriz, c3);
+			margin-left: 10px;
+		}
 
-        .link-app {
-            @include display1 (flex, center, center);
-            @include display2 (row, nowrap, center);
+		.link-app {
+			@include display1 (flex, center, center);
+			@include display2 (row, nowrap, center);
+			width: 100%;
 
-            a {
-                padding: map-get($pads , p4);
-                text-align: $t-align;
-                text-decoration: none;
 
-                img {
-                    @media only screen and (max-width: 600px) {
-                        width: 150px;
-                        height: 50px;
-                    }
-                }
-            }
-        }
-    }
+			a {
+				padding: map-get($pads , p5);
+				text-align: $t-align;
+				text-decoration: none;
+				background-color: black;
+				border-radius: 5px;
+				margin-left: 5px;
 
-    .aquisi-app {
-        width: 50%;
-        @include display1 (flex, center, center);
-        @include display2 (column, nowrap, center);
+				&:hover {
+					background-image: linear-gradient(180deg, #4d4c4ce5 0%, #000000d5 100%);
+				}
 
-        .aquisi-app-img {
-            object-fit: cover;
-        }
+				img {
+					object-fit: contain;
+					width: 150px;
 
-        h3 {
-            text-align: center;
-        }
 
-        a {
-            padding: map-get($pads , p4);
-            text-align: $t-align;
-            text-decoration: none;
-            background-color: map-get($color-matriz, c4);
-            border-radius: 8px;
-            letter-spacing: -1px;
-            font-size: map-get($fonts-size , f3);
-            font-weight: 500;
-            padding: 5px;
+					@media only screen and (max-width: 600px) {
+						width: 150px;
+						height: 50px;
+					}
+				}
+			}
+		}
+	}
 
-            position: relative;
-            text-decoration: none;
-            color: #FFF;
+	.aquisi-app {
+		width: 50%;
+		@include display1 (flex, center, center);
+		@include display2 (column, nowrap, center);
 
-            &:hover {
-                background-image: linear-gradient(180deg, #edb119 0%, #c18d09 100%);
-                transform: translateY(-3px);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            }
-        }
-    }
+		.aquisi-app-img {
+			object-fit: cover;
+		}
+
+		h3 {
+			text-align: center;
+		}
+
+		a {
+			@include btn-a-padron;
+			padding: map-get($pads , p4);
+			text-align: $t-align;
+			text-decoration: none;
+			background-color: map-get($color-matriz, c4);
+			border-radius: 8px;
+			letter-spacing: -1px;
+			font-size: map-get($fonts-size , f3);
+			font-weight: 500;
+		}
+	}
 }
 
 .modal-contenedor {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: all .5s;
-    opacity: 0;
-    visibility: hidden;
-    @include display1 (flex, center, center);
-    align-items: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.3);
+	transition: all .5s;
+	opacity: 0;
+	visibility: hidden;
+	@include display1 (flex, center, center);
+	align-items: center;
 }
 
 .modal-active {
-    opacity: 1;
-    visibility: visible;
+	opacity: 1;
+	visibility: visible;
 }
 
 .modal-apy {
-    position: relative;
-    background-color: #212121;
-    min-width: 500px;
-    padding: 20px;
-    margin-top: -100%;
-    transition: all .5s;
+	position: relative;
+	background-color: #212121;
+	min-width: 500px;
+	padding: 20px;
+	margin-top: -100%;
+	transition: all .5s;
 }
 
 .modal-active .modal-apy {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 .modal-apy h3 {
-    color: white;
-    border-bottom: $b-global;
-    padding-bottom: 5px;
+	color: white;
+	border-bottom: $b-global;
+	padding-bottom: 5px;
 }
 
 .modal-apy #containerCerrar {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 20px;
-    color: map-get($color-matriz, c1);
-    ;
-    border: none;
-    background-color: transparent;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 20px;
+	color: map-get($color-matriz, c1);
+	;
+	border: none;
+	background-color: transparent;
 }
 
 .modal-apy #btnCerrar:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .modal-apy #btnCerrar:focus {
-    outline: none;
+	outline: none;
 }
 
 .modal-apy .apy-contenedor {
-    padding-top: 10px;
-    @include display1 (flex, center, center);
-    @include display2 (row, wrap, center);
+	padding-top: 10px;
+	@include display1 (flex, flex-start, center);
+	@include display2 (row, wrap, center);
 
-    span {
-        margin: 2px;
-    }
+	span {
+		margin: 2px;
+	}
 }
 
 /* section 2 */
 
 .container-content-ganancias {
-    @include display1 (flex, space-evenly, center);
-    @include display2 (row, wrap, center);
+	@include display1 (flex, space-evenly, center);
+	@include display2 (row, wrap, center);
 
-    .content-ganancias {
-        @include display1 (flex, center, center);
-        @include display2 (column, nowrap, center);
+	.content-ganancias {
+		@include display1 (flex, center, center);
+		@include display2 (column, nowrap, center);
 
-        h3 {
-            text-align: center;
-            padding-top: 5px;
-        }
 
-        img {
-            background-color: #212121;
-            border-radius: 600px;
-            width: 250px;
+		h3 {
+			text-align: center;
+			padding-top: 5px;
+		}
 
-            &:hover {
-                background-image: linear-gradient(180deg, #edb119e5 0%, #c18d09d5 100%);
-                transform: scale(0.91);
-            }
-        }
-    }
+		img {
+			background-color: #212121;
+			border-radius: 600px;
+			width: 250px;
+
+			&:hover {
+				background-image: linear-gradient(180deg, #edb119e5 0%, #c18d09d5 100%);
+				transform: scale(0.91);
+			}
+		}
+	}
 }
 
 .container-calculadora {
-    background-color: #212121;
-    padding: 10px;
-    border-radius: 20px;
-    @include display1 (flex, center, center);
-    @include display2 (column, wrap, center);
+	background-color: #212121;
+	padding: 10px;
+	border-radius: 20px;
+	@include display1 (flex, center, center);
+	@include display2 (column, wrap, center);
 
-    &:hover {
-        background-image: linear-gradient(180deg, #4d4c4ce5 0%, #000000d5 100%);
-    }
+	&:hover {
+		@include hover-btns;
+	}
 }
 
 form {
-    @include display1 (flex, center, center);
-    @include display2 (column, wrap, center);
+	@include display1 (flex, center, center);
+	@include display2 (column, wrap, center);
 
-    .formCheck {
-        @include display1 (flex, center, center);
-        @include display2 (row, wrap, center);
-        padding: 5px;
-        
-        label {
-            padding: 5px;
-        }
+	.formCheck {
+		@include display1 (flex, center, center);
+		@include display2 (row, wrap, center);
+		padding: 5px;
 
-        span {
-            font-size: map-get($fonts-size, f2);
-        }
+		#token1:checked{
+			color: #212121;
+		}
 
-    }
+		label {
+			padding: 5px;
+		}
 
-    .container-btn-cal {
-        .btn-padron {
-            padding: map-get($pads , p4);
-            text-align: $t-align;
-            text-decoration: none;
-            background-image: linear-gradient(180deg, #edb119 0%, #c18d09 100%);
-            border-radius: 8px;
-            letter-spacing: -1px;
-            font-size: map-get($fonts-size , f3);
-            font-weight: 500;
-            padding: 5px;
+		span {
+			font-size: map-get($fonts-size, f2);
+		}
 
-            position: relative;
-            text-decoration: none;
-            color: #FFF;
+	}
 
-            &:hover {
-                background-image: linear-gradient(180deg, #ceae2f 0%, #e4cd95 100%);
-                transform: translateY(-3px);
+	.container-btn-cal {
+		@include display1 (flex, center, center);
+		@include display2 (row, wrap, center);
 
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-                color: map-get($color-matriz, c4);
-            }
-        }
-    }
+		.btn-padron {
+			padding: map-get($pads , p4);
+			text-align: $t-align;
+			text-decoration: none;
+			background-image: linear-gradient(180deg, #edb119 0%, #c18d09 100%);
+			border-radius: 8px;
+			letter-spacing: -1px;
+			font-size: map-get($fonts-size , f3);
+			font-weight: 500;
+			padding: 5px;
+
+			position: relative;
+			text-decoration: none;
+			color: #FFF;
+
+			&:hover {
+				background-image: linear-gradient(180deg, #ceae2f 0%, #e4cd95 100%);
+				transform: translateY(-3px);
+
+
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+				color: map-get($color-matriz, c4);
+			}
+		}
+
+		.btnClear {
+			padding-top: 20px;
+			text-align: $t-align;
+			text-decoration: none;
+			background-image: linear-gradient(180deg, #edb119 0%, #c18d09 100%);
+			border-radius: 8px;
+			letter-spacing: -1px;
+			font-size: map-get($fonts-size , f3);
+			font-weight: 500;
+			padding: 5px;
+
+			position: relative;
+			text-decoration: none;
+			color: #FFF;
+
+			&:hover {
+				background-image: linear-gradient(180deg, #4d4c4ce5 0%, #000000d5 100%);
+			}
+		}
+	}
 }
+
 /* loader */
 .loader {
-    display: none;
-    align-items: center;
+	display: none;
+	align-items: center;
 
 }
 
 .bar {
-    display: inline-block;
-    width: 3px;
-    height: 20px;
-    background-color: rgba(255, 255, 255, .5);
-    border-radius: 10px;
-    animation: scale-up4 1s linear infinite;
+	display: inline-block;
+	width: 3px;
+	height: 20px;
+	background-color: rgba(255, 255, 255, .5);
+	border-radius: 10px;
+	animation: scale-up4 1s linear infinite;
 }
 
 .bar:nth-child(2) {
-    height: 35px;
-    margin: 0 5px;
-    animation-delay: .25s;
+	height: 35px;
+	margin: 0 5px;
+	animation-delay: .25s;
 }
 
 .bar:nth-child(3) {
-    animation-delay: .5s;
+	animation-delay: .5s;
 }
 
 @keyframes scale-up4 {
-    20% {
-        background-color: #ffff;
-        transform: scaleY(1.5);
-    }
+	20% {
+		background-color: #ffff;
+		transform: scaleY(1.5);
+	}
 
-    40% {
-        transform: scaleY(1);
-    }
+	40% {
+		transform: scaleY(1);
+	}
 }
 
-.container-total{
-    display: none;
-    padding-top: 10px;
-    .total-c{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: nowrap;
-        .montoTotal{
-            text-align: center;
-            font-size: 15pt;
-        }
-    }
+.container-total {
+	display: none;
+	padding-top: 10px;
+
+
+	.total-c {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: nowrap;
+
+		.montoTotal {
+			text-align: center;
+			font-size: 15pt;
+		}
+	}
+
+	.btnCuenta {
+		padding-top: 20px;
+		@include display1 (flex, space-evenly, center);
+		@include display2 (row, nowrap, center);
+
+		a {
+			text-decoration: none;
+		}
+
+		button {
+			@include display1 (flex, space-evenly, center);
+			background-image: linear-gradient(180deg, #4d4c4ce5 0%, #000000d5 100%);
+			border-radius: 8px;
+			letter-spacing: -1px;
+			padding: 5px;
+
+			position: relative;
+			text-decoration: none;
+			color: #FFF;
+
+			&:hover {
+				background-image: linear-gradient(180deg, #edb119 0%, #c18d09 100%);
+			}
+
+		}
+
+		.fa-arrow-right-to-bracket,
+		.fa-user-plus {
+			font-size: 13pt;
+			color: map-get($color-matriz, c1);
+
+			&:hover {
+				color: white
+			}
+		}
+	}
+}
+
+.container-servicios {
+	.container-service {
+		@include display1 (flex, center, center);
+		@include display2 (row, wrap, center);
+
+		.title-section {
+			@include Titles;
+		}
+
+		.service {
+			@include display1 (flex, center, center);
+			@include display2 (column, wrap, center);
+
+
+
+			.img-laster {
+				width: auto;
+
+				&:hover {
+					animation: float 2s ease-in-out 2;
+				}
+
+				img {
+					object-fit: fill;
+					width: 70%;
+					margin: auto;
+					display: block;
+
+				}
+			}
+
+			.content-laster {
+				h4 {
+					text-align: center;
+				}
+
+				p {
+					font-size: large;
+				}
+			}
+
+			.btn-laster {
+				@include btn-a-padron;
+				background-color: #212121;
+
+
+				a {
+					padding: map-get($pads , p4);
+					text-align: $t-align;
+					text-decoration: none;
+					letter-spacing: -1px;
+					font-size: map-get($fonts-size , f3);
+					font-weight: 500;
+					color: white;
+
+					&:hover {
+						color: black
+					}
+				}
+			}
+		}
+	}
+}
+
+/* nuestra app */
+.container-nuestrapp {
+	.nuestrapp {
+		.title-section {
+			@include Titles;
+			margin-top: 5px;
+			padding: 20px;
+		}
+
+		.nuestrapp-info {
+			@include display1 (flex, space-evenly, flex-start);
+			@include display2 (column, wrap, flex-start);
+			padding-left: 10px;
+
+			.nuestrapp-content {
+				@include display1 (flex, center, flex-start);
+				@include display2 (column, wrap, flex-start);
+				width: 100%;
+
+				&:hover {
+					animation: float 2s ease-in-out 2;
+				}
+
+				.container-icon {
+					fill: #edb119;
+					width: 70px;
+				}
+
+				.nuestrapp-text {
+					@include display1 (flex, center, flex-start);
+					@include display2 (column, wrap, flex-start);
+				}
+			}
+		}
+	}
+
+	.nuestrapp-img {
+
+		.container-nuestrapp-img {
+			img {
+				object-fit: fill;
+				display: block;
+				width: 50%;
+				margin: auto;
+				box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+				transform: translatey(0px);
+				animation: float 6s ease-in-out infinite;
+
+				@keyframes float {
+					0% {
+						box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+						transform: translatey(0px);
+					}
+
+					50% {
+						box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+						transform: translatey(-20px);
+					}
+
+					100% {
+						box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+						transform: translatey(0px);
+					}
+				}
+			}
+		}
+	}
 }
