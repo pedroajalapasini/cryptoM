@@ -1,13 +1,18 @@
+
+
+
 let coinsRate = [
-    {id: 1, nombre: "BTC", desc: "BTC/ARS", precio: "6.368,124", apy: "2.5%", img: './multimedia//coins/BTC.png'},
-    {id: 2, nombre: "ETH", desc: "ETH/ARS", precio: "492.213", apy: "2%", img: './multimedia//coins/ETH.png'},
-    {id: 3, nombre: "USDT", desc: "USDT/ARS", precio: "297,95", apy: "3%", img: './multimedia//coins/USDT.png'},
-    {id: 4, nombre: "USDC", desc: "USDC/ARS", precio: "297,95", apy: "4.5%", img: './multimedia//coins/USDC.png'},
-    {id: 5, nombre: "DAI", desc: "DAI/ARS", precio: "297,95", apy: "5%", img: './multimedia//coins/DAI.png'},
-    {id: 6, nombre: "BUSD", desc: "BUSD/ARS", precio: "297,95", apy: "3.5%", img: './multimedia//coins/BUSB.png'},
-    {id: 7, nombre: "BNB", desc: "BNB/ARS", precio: "105,772", apy: "2.5%", img: './multimedia//coins/BNB.png'},
-    {id: 8, nombre: "SOL", desc: "SOL/ARS", precio: "10,378", apy: "4%", img: './multimedia//coins/SOL.png'},
-    {id: 9, nombre: "DOT", desc: "DOT/ARS", precio: "2,136", apy: "9%", img: './multimedia//coins/POLKADOT.png'},
-    {id: 10, nombre: "MATIC", desc: "MATIC/ARS", precio: "355,93", apy: "3%", img: './multimedia//coins/MATIC.png'},
+    { id: 1, nombre: "BTC", desc: "BTC/ARS", apy: "2.5%", img: './media/37746251/btc.png' },
+    { id: 2, nombre: "ETH", desc: "ETH/ARS",  apy: "2%", img: './media/37746238/eth.png' },
+    { id: 3, nombre: "BUSD", desc: "BUSD/ARS",  apy: "3.5%", img: './media/37746248/busd.png'},
+    { id: 4, nombre: "DOGE", desc: "DOGE/ARS", apy: "5%", img: './media/37746339/doge.png' },
+    { id: 5, nombre: "USDT", desc: "USDT/ARS", apy: "2.5%", img:'./media/37746338/USDT.png'},
+    { id: 6, nombre: "XRP", desc: "XRP/ARS", apy: "2.5%", img: './media/38553096/xrp.png'},
+    { id: 7, nombre: "BNB", desc: "BNB/ARS", apy: "4%", img: './media/40485170/BNB.png' },
+    { id: 8, nombre: "MATIC", desc: "MATIC/ARS", apy: "9%", img: './media/37746047/MATIC.png' },
+    { id: 9, nombre: "LTC", desc: "LTC/ARS", apy: "3%", img: './media/37746243/ltc.png' },
+    { id: 10, nombre: "LINK", desc: "LINK/ARS", apy: "3%", img: './media/37746242/link.png' },
 ]
+
+
 

@@ -1,40 +1,82 @@
 /* header */
-
-.container-exchangeRate {
-   @include display-padron;
-   background-color: black;
-   color: white;
-   overflow: hidden;
-   position: absolute;
-
-
-   .exchangeRate {
-      @include display1 (flex, center, center);
-      @include display2 (row, nowrap, center);
-      margin: 2px 20px;
-      position: relative;
-
-      overflow: hidden;
-
-      animation: marquee 15s linear infinite;
-
-      @keyframes marquee {
-         0% {
-            left: 100%;
-            transition: 20s;
-         }
-
-         100% {
-            left: -40%;
-            transition: 20s;
-         }
-      }
-      strong {
-         margin-left: 2px;
-      }
-
-      span {
-         margin-left: 5px;
+.navbar-nav {
+   .nav-item {
+      .nav-link {
+         color: white;
       }
    }
+}
+
+.cRate {
+   display: block;
+   background-color: black;
+   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+   height: 40px;
+   margin: auto;
+   overflow: hidden;
+   position: relative;
+
+   @media (max-width: 500px) {
+width: auto   ;
+   }
+
+   &::before,
+   &::after {
+      @include black-gradient;
+      content: "";
+      height: 90px;
+      position: absolute;
+      width: 200px;
+      z-index: 2;
+   }
+
+   &::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+   }
+
+   &::before {
+      left: 0;
+      top: 0;
+   }
+
+   .container-exchangeRate {
+      @include display1 (flex, center, center);
+      @include display2 (row, nowrap, center);
+
+      width: auto;
+      color: white;
+      overflow: hidden;
+      position: absolute;
+
+      animation: scroll $animationSpeed linear infinite;
+      width: calc(250px * 14);
+
+      &:hover {
+         animation-play-state: paused;
+      }
+
+
+
+      .exchangeRate {
+         @include display1 (flex, center, center);
+         @include display2 (row, nowrap, center);
+         margin: 2px 20px;
+         position: relative;
+
+         overflow: hidden;
+
+
+         strong {
+            margin-left: 2px;
+         }
+
+         span {
+            margin-left: 5px;
+         }
+      }
+   }
+
+
 }

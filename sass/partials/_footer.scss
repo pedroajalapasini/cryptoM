@@ -2,68 +2,109 @@
 footer {
     background-color: #212121;
 
+    @media only screen and (max-width: 500px) {
+        width: auto;
+    }
+
     .container-footer {
+        @include display1 (flex, center, flex-start);
+        @include display2 (column, nowrap, flex-start);
+        width: auto;
+
         .container-brand-f {
-            li {
+            @include display1 (flex, center, flex-start);
+            @include display2 (column, nowrap, flex-start);
+
+
+            .brand-f.img {
+                @include display1 (flex, center, flex-start);
+                @include display2 (column, wrap, flex-start);
+                width: 50%;
+                @media only screen and (max-width: 500px) {
+                    @include display1 (flex, center, flex-start);
+                    @include display2 (column, wrap, flex-start);
+                }
+            }
+
+            .brand-f-text {
+                @include display1 (flex, center, flex-start);
+                @include display2 (column, wrap, flex-start);
                 margin-top: 5px;
-                list-style: none;
                 font-style: italic;
             }
+
+        }
+        .container-links{
+            @include display1 (flex, center, flex-start);
+            @include display2 (row, wrap, flex-start);
+            margin: 5px;
         }
 
         .c-Eu {
-
+            @include display1 (flex, center, flex-start);
+            @include display2 (column, wrap, flex-start);
+            padding: 5px;
             li {
                 list-style: none;
                 display: flex;
 
                 a {
-                @include btn-a-padron;
-            }
-        }
-    }
-
-    .c-Ct {
-        .container-contact {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-
-            .contact-mail {
-                span {
-                    margin-left: 2px;
-                }
-            }
-
-            .contact-phone {
-                margin-top: 25px;
-
-                span {
-                    margin-left: 2px;
+                    @include btn-a-padron;
                 }
             }
         }
-    }
 
-    .c-Rs {
-        .container-redes-o {
-            a {
-                @include cc-rss;
+        .c-Ct {
+            padding: 5px;
+            @media only screen and (max-width: 500px) {
+                @include display1 (flex, center, flex-start);
+                @include display2 (column, wrap, flex-start);
+            }
+            .container-contact {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+
+                .contact-mail {
+                    span {
+                        margin-left: 2px;
+                    }
+                }
+
+                .contact-phone {
+                    span {
+                        margin-left: 2px;
+                    }
+                }
+            }
+        }
+
+        .c-Rs {
+            @media only screen and (max-width: 500px) {
+                @include display1 (flex, center, flex-start);
+                @include display2 (row, wrap, flex-start);
+            }
+            margin: 5px;
+            padding: 5px;
+            .container-redes-o {
+                margin: 5px;
+                a {
+                    @include cc-rss;
+
+                }
 
             }
 
-        }
-
-        .container-redes-cc {
-            margin-top: 25px;
-
-            a {
-                @include cc-rss;
+            .container-redes-cc {
+                margin: 5px;
+                a {
+                    @include cc-rss;
+                }
             }
         }
-    }
 
-    .derechos-a {
-        text-align: center;
+        .derechos-a {
+            text-align: center;
+        }
     }
-}}
+}

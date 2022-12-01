@@ -1,6 +1,6 @@
 const containerRate = document.querySelector('#containerRate');
 
-coinsRate.forEach((exchangeRate) => {
+/* coinsRate.forEach((exchangeRate) => {
     const div = document.createElement('div')
     div.className = 'exchangeRate'
 
@@ -10,7 +10,7 @@ coinsRate.forEach((exchangeRate) => {
         <span>$${exchangeRate.precio}</span>
     `
     containerRate.append(div)
-});
+}); */
 
 
 coinsRate.forEach((apyContenedor) => {
@@ -25,73 +25,118 @@ coinsRate.forEach((apyContenedor) => {
     modalApy.append(div)
 
 });
+/* form cotizador */
 
-/* const de solicitud */
+const form = document.querySelector("#formCoti");
+const fiat = document.querySelector("#fiatSelect");
+const criptomoneda = document.querySelector("#coinSelect");
+const formContainer = document.querySelector(".form-coti");
+const containerResult = document.querySelector(".container-result");
+const btnForm = document.querySelector("input[type=submit]");
+const botoneraForm = document.querySelector("#btn-form")
 
-const resultadoFinal = document.querySelector('#result-earn')
-const TokenBTC = 6.067072;
-const TokenETH = 492.21310;
-const TokenUSDT = 297.95;
-const TokenUSDC = 297.95;
-const TokenBNB = 105.772;
-
-function resultadoTotal() {
-    let total = 0;
-    let MontoIngresado = parseInt(document.getElementById('monto-ingresado').value);
-
-    if (document.getElementById('token1').checked) {
-        total = MontoIngresado / TokenBTC
-
-        resultadoFinal.innerText = "$" + total.toFixed(6)
-
-    }
-    else if (document.getElementById('token2').checked) {
-        total = MontoIngresado / TokenETH
-
-        resultadoFinal.innerText = "$" + total.toFixed(5)
-    }
-    else if (document.getElementById('token3').checked) {
-        total = MontoIngresado / TokenUSDT
-
-        resultadoFinal.innerText = "$" + total.toFixed(2)
-    }
-    else if (document.getElementById('token4').checked) {
-        total = MontoIngresado / TokenUSDC
-
-        resultadoFinal.innerText = "$" + total.toFixed(2)
-    }
-    else if (document.getElementById('token5').checked) {
-        total = MontoIngresado / TokenBNB
-
-        resultadoFinal.innerText = "$" + total.toFixed(5)
-    }
-    else {
-        resultadoFinal.innerText = 'Debés elegir una opción'
-        resultadoFinal.style.color = "rgb(240, 86, 86)"
-    }
+let buscador = {
+    fiat: '',
+    criptomoneda: ''
 }
+/* DOM */
 
+document.addEventListener('DOMContentLoaded', () => {
+    queryCoins();
+    form.addEventListener('submit', btnCotizar);
+    fiat.addEventListener('change', eValor);
+    criptomoneda.addEventListener('change', eValor);
+})
 
-const calcular = document.querySelector('#btn-calculador')
-const clear = document.querySelector('#btn-clear')
-calcular.addEventListener('click', (e) => {
+function btnCotizar(e) {
     e.preventDefault();
-    MostrarTotal();
-
-})
-
-function MostrarTotal() {
-    const containerResultado = document.querySelector('.container-total')
-    containerResultado.style.display = "block"
-    resultadoTotal();
+    const { fiat, criptomoneda } = buscador;
+    if (fiat === '' || criptomoneda === '') {
+        showError("Necesitás elegir las monedas");
+        return;
+    }
+    rtaAPI(fiat, criptomoneda);
 }
 
-clear.addEventListener('click', () =>{
-    const containerResultado = document.querySelector('.container-total')
-    containerResultado.style.display = "none"
-})
+function rtaAPI(fiat, criptomoneda) {
+    const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${fiat}`;
+    fetch(url)
+        .then(respuesta => respuesta.json())
+        .then(respuestaJson => {
+            renderRta(respuestaJson.DISPLAY[criptomoneda][fiat]);
+        })
+        .catch(error => console.log(error));
+}
+function renderRta(info) {
+    clearForm()
+    const { PRICE } = info;
+    const resultadoAPI = document.createElement('div');
+    resultadoAPI.className = 'resultado-api'
+    resultadoAPI.innerHTML = `
+    <span>Valor total: <strong>${PRICE}</strong></span>
+    <div class= "botones-result">
+    <a href="../partials/login.html" class="btn-compra">Comprar</a>
+    <a class="btn-back" onclick="BackForm()"><i class="fa-solid fa-arrows-rotate"></i></a></div>
+    `
+    containerResult.append(resultadoAPI)
+}
+function BackForm() {
+    clearForm()
 
+}
+function clearForm() {
+    containerResult.innerHTML = '';
+}
 
-// login // 
+function showError(msj) {
+    const Error = document.createElement('div');
+    Error.className = 'error'
+    Error.innerHTML = `
+    <strong>${msj}</strong>
+    `
+    formContainer.appendChild(Error);
+    setTimeout(() => Error.remove(), 5000,);
+}
 
+function eValor(ev) {
+    buscador[ev.target.name] = ev.target.value;
+}
 
+function queryCoins() {
+    const cURL = 'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD'
+    fetch(cURL)
+        .then(retorno => retorno.json())
+        .then(retornoJson => {
+            selectCoin(retornoJson.Data)
+            rateExg(retornoJson.Data)
+        })
+        .catch(error => console.log(error));
+}
+
+/* selector crypto */
+function selectCoin(cryptos) {
+    cryptos.forEach(crypto => {
+        const { FullName, Name } = crypto.CoinInfo;
+        const opt = document.createElement("option")
+        opt.value = Name;
+        opt.textContent = FullName;
+
+        criptomoneda.appendChild(opt);
+    })
+}
+/* rate carrousel */
+function rateExg(rateCrypto) {
+    rateCrypto.forEach(element => {
+        const { Name, ImageUrl } = element.CoinInfo
+        const { PRICE } = element.DISPLAY.USD
+        const div = document.createElement('div')
+        div.className = 'exchangeRate'
+
+        div.innerHTML = `
+        <img src=${ImageUrl} alt="" width="auto" height="30">
+        <strong>${Name}/USD</strong>
+        <span>${PRICE}</span>  
+    `
+        containerRate.append(div)
+    })
+};
