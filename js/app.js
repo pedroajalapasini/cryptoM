@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', btnCotizar);
     fiat.addEventListener('change', eValor);
     criptomoneda.addEventListener('change', eValor);
+    botoneraForm.addEventListener('reset', eValor)
 })
 
 function btnCotizar(e) {
@@ -65,6 +66,7 @@ function rtaAPI(fiat, criptomoneda) {
         .then(respuestaJson => {
             renderRta(respuestaJson.DISPLAY[criptomoneda][fiat]);
         })
+
         .catch(error => console.log(error));
 }
 function renderRta(info) {
@@ -133,7 +135,7 @@ function rateExg(rateCrypto) {
         div.className = 'exchangeRate'
 
         div.innerHTML = `
-        <img src=${ImageUrl} alt="" width="auto" height="30">
+        <img src={./${ImageUrl}} alt="" width="auto" height="30">
         <strong>${Name}/USD</strong>
         <span>${PRICE}</span>  
     `
