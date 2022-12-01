@@ -41,6 +41,52 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
 }
 
+@mixin btn-select{
+    background-color: transparent;
+    color:#c18d09;
+    border-radius: 8px;
+    padding: 3px;
+    margin: 5px;
+}
+@mixin btn-opt{
+    background-color: #212121;
+    color: white;
+}
+@mixin btn-result {
+    text-decoration: none;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    transition: .3s;
+    z-index: 1;
+    color: white;
+    border-radius: 8px;
+
+    &::before {
+        content: '';
+        width: 0;
+        height: 500%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background: #FDC101;
+        transition: .5s ease;
+        display: block;
+        z-index: -1;
+    }
+
+    &:hover::before {
+        width: 150%;
+    }
+
+    &:hover {
+        color: #111;
+
+    }
+}
 @mixin btn-a-padron {
     text-decoration: none;
     padding: 3px;
@@ -82,4 +128,15 @@
     font-weight: 900;
     text-align: center;
     text-decoration: underline #FDC101;
+}
+
+@mixin black-gradient {
+	background: linear-gradient(to right, rgba(255,255,255,0) 100%, rgba(255,255,255,1) 0%);
+}
+
+$animationSpeed: 20s;
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 7))}
 }

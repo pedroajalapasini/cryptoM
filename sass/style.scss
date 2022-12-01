@@ -10,5 +10,8 @@ body{
     margin: auto;
     /**/ background-color: $bg-home; 
     font-family: $font-global;
-    color:map-get($color-matriz, c3 )
+    color:map-get($color-matriz, c3 );
+    @media only screen and (max-width: 500px) {
+        @include display2 (column, wrap, center);
+    }
 }
